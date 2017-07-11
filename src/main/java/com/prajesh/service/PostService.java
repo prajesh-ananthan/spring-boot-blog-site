@@ -5,6 +5,8 @@ import com.prajesh.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Prajesh Ananthan
  *         Created on 10/7/2017.
@@ -21,5 +23,9 @@ public class PostService {
 
   public Post getLatestPost() {
     return postRepository.findFirstByOrderByPostedOnDesc();
+  }
+
+  public List<Post> getPosts() {
+    return postRepository.findAllByOrderByPostedOnDesc();
   }
 }

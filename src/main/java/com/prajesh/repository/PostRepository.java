@@ -4,6 +4,8 @@ import com.prajesh.model.Post;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Prajesh
  *         Created by Prajesh Ananthan on 9/7/2017.
@@ -12,4 +14,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {
   Post findFirstByOrderByPostedOnDesc();
+
+  List<Post> findAllByOrderByPostedOnDesc();
 }
