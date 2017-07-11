@@ -1,6 +1,5 @@
 package com.prajesh;
 
-import com.prajesh.model.Post;
 import com.prajesh.repository.PostRepository;
 import com.prajesh.service.DataLoaderService;
 import org.slf4j.Logger;
@@ -28,9 +27,7 @@ public class RunJPAApplication {
 
   @PostConstruct
   public void getPost() {
-    log.info("Getting a list of posts.....");
-    for (Post post : postRepository.findAll()) {
-      log.info(post.toString() + "\n");
-    }
+    log.debug("Getting a list of posts.....");
+    postRepository.findAll().forEach(p -> log.debug(p.toString()));
   }
 }
