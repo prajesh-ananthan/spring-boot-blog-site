@@ -4,6 +4,7 @@ import com.prajesh.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -24,5 +25,11 @@ public class PostController {
   public String listPosts(Model model) {
     model.addAttribute("posts", postService.getPosts());
     return "post/list";
+  }
+
+  @RequestMapping("/posts/view/{slug}")
+  public String getPost(@PathVariable(value = "slug") String slug, Model model) {
+    model.addAttribute("post", postService.getBySlug(slug));
+    return "post/view";
   }
 }
