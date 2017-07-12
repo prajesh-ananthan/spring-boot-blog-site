@@ -1,22 +1,18 @@
 package com.prajesh.controller;
 
 import com.prajesh.service.PostService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by ANAN011 on 11/7/2017.
- *
- * @author Prajesh Ananthan, arvato Systems Malaysia Sdn Bhd
+ * @author Prajesh Ananthan
+ *         Created on 12/7/2017.
  */
 @Controller
 public class PostController {
-
-  private Logger LOG = LoggerFactory.getLogger(PostController.class);
 
   private PostService postService;
 
@@ -26,15 +22,14 @@ public class PostController {
   }
 
   @RequestMapping("/posts/list")
-  public String listPost(Model model) {
+  public String listPosts(Model model) {
     model.addAttribute("posts", postService.getPosts());
-    return "post/view";
+    return "post/list";
   }
 
-  // Get the post by slug name
-//  @RequestMapping("/posts/view/{slug}")
-//  public String getSlug(@PathVariable(value="slug") String slug, Model model) {
-//    model.addAttribute("post", postService.findBySlug(slug));
-//    return "/view";
-//  }
+  @RequestMapping("/posts/view/{slug}")
+  public String getPost(@PathVariable(value = "slug") String slug, Model model) {
+    model.addAttribute("post", postService.getBySlug(slug));
+    return "post/view";
+  }
 }

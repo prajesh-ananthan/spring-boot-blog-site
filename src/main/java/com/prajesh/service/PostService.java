@@ -28,8 +28,8 @@ public class PostService {
   public List<Post> getPosts() {
     return postRepository.findAllByOrderByPostedOnDesc();
   }
-//
-//  public Post findBySlug(String slug) {
-//    return postRepository.findBySlug(slug);
-//  }
+
+  public Post getBySlug(String slug) {
+    return postRepository.findBySlug(slug);
+  }
 }

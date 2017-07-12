@@ -27,7 +27,7 @@ public class RunJPAApplication {
 
   @PostConstruct
   public void getPost() {
-    log.debug("Getting a list of posts.....");
-    postRepository.findAll().forEach(p -> log.debug(p.toString()));
+    log.info("Getting a list of posts.....");
+    postRepository.findAll().forEach(p -> log.info(p.toString() + "\n"));
   }
 }

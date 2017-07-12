@@ -17,5 +17,5 @@ public interface PostRepository extends CrudRepository<Post, Long> {
 
   List<Post> findAllByOrderByPostedOnDesc();
 
-//  Post findBySlug(String slug);
+  Post findBySlug(String slug);
 }
