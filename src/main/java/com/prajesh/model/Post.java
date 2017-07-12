@@ -36,7 +36,6 @@ public class Post {
 
   @SuppressWarnings("unused")
   public Post() {
-
   }
 
   public Post(String title) {

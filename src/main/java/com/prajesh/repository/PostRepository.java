@@ -18,4 +18,12 @@ public interface PostRepository extends CrudRepository<Post, Long> {
   List<Post> findAllByOrderByPostedOnDesc();
 
   Post findBySlug(String slug);
+
+  List<Post> findAllByAuthorFirstName(String firstName);
+
+  List<Post> findAllByAuthorFirstNameIgnoreCase(String firstName);
+
+  List<Post> findAllByAuthorLastNameIgnoreCase(String lastName);
+
+
 }

@@ -32,4 +32,16 @@ public class PostService {
   public Post getBySlug(String slug) {
     return postRepository.findBySlug(slug);
   }
+
+  public Post findPostById(Long id) {
+    return postRepository.findOne(id);
+  }
+
+  public List<Post> findbyAuthorFirstName(String firstName) {
+    return postRepository.findAllByAuthorFirstNameIgnoreCase(firstName);
+  }
+
+  public List<Post> findbyAuthorLastName(String lastName) {
+    return postRepository.findAllByAuthorLastNameIgnoreCase(lastName);
+  }
 }

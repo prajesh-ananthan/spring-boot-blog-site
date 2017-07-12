@@ -4,6 +4,8 @@ import com.prajesh.model.Author;
 import com.prajesh.model.Post;
 import com.prajesh.repository.AuthorRepository;
 import com.prajesh.repository.PostRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,9 @@ import java.util.Date;
  */
 @Service
 public class DataLoaderService {
+
+  private static final Logger log = LoggerFactory.getLogger(DataLoaderService.class);
+
   private AuthorRepository authorRepository;
   private PostRepository postRepository;
 
@@ -27,6 +32,7 @@ public class DataLoaderService {
 
   @PostConstruct
   private void loadData() {
+    log.info("Loading data from POJO..");
     Author author = new Author();
     author.setFirstName("Divya");
     author.setLastName("Garg");
