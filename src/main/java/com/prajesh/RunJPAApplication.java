@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class RunJPAApplication {
 
   private static final Logger log = LoggerFactory.getLogger(RunJPAApplication.class);

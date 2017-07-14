@@ -19,7 +19,7 @@ public class PageController {
   // From application.properties
   private @Value("${message.str}") String message;
 
-  @RequestMapping("/home")
+  @RequestMapping("/test/home")
   public String home() {
     return notifcationService.toString();
   }

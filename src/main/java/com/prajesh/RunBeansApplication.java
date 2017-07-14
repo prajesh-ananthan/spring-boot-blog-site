@@ -13,7 +13,7 @@ import java.util.Arrays;
  * This class shows the beans loaded upon runtime
  */
 
-@SpringBootApplication
+//@SpringBootApplication
 public class RunBeansApplication {
 
   public static void main(String[] args) {

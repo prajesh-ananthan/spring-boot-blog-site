@@ -22,7 +22,7 @@ public class HomeController {
     this.postService = postService;
   }
 
-  @RequestMapping("/")
+  @RequestMapping("/home")
   public String getLatestPost(Model model) {
     model.addAttribute("post", postService.getLatestPost());
     return "index";

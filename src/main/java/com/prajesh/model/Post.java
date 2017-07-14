@@ -105,6 +105,8 @@ public class Post {
     sb.append(", title='").append(title).append('\'');
     sb.append(", body='").append(body).append('\'');
     sb.append(", postedOn=").append(postedOn);
+    sb.append(", teaser='").append(teaser).append('\'');
+    sb.append(", slug='").append(slug).append('\'');
     sb.append(", author=").append(author);
     sb.append('}');
     return sb.toString();
