@@ -43,10 +43,7 @@ public class PostServiceCrudImpl implements PostServiceCrud {
 
   @Override
   public Post read(long id) {
-    Post post = postRepository.findOne(id);
-    if (post == null)
-      log.error("Post id = " + id + " not found!");
-    return post;
+    return postRepository.findOne(id);
   }
 
   @Override
